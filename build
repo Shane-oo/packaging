@@ -215,7 +215,7 @@ def build_vagrant(config, target, src_dir, iteration, clean=False, debug=False, 
         shell('vagrant ssh-config %s > .vagrant/%s_config' % (vm, vm), 'vagrant')
 
         def rsync(flags, src, tgt):
-            shell('rsync -a -e --info=progress2 "ssh -F vagrant/.vagrant/%s_config" %s %s/ %s:%s/%s' % (vm, flags, os.path.abspath(src), vm, base, tgt))
+            shell('rsync -a -e "ssh -F vagrant/.vagrant/%s_config" %s %s/ %s:%s/%s' % (vm, flags, os.path.abspath(src), vm, base, tgt))
 
         shell('ssh -F vagrant/.vagrant/%s_config %s -- "bash -c \'mkdir -p %s\'"' % (vm, vm, base))
         rsync('--delete --exclude .git',    src_dir, 'src')
