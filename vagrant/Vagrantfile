@@ -43,7 +43,8 @@ gem install fpm --no-ri --no-rdoc
 choco uninstall -y rsync
 cd "C:/Program Files/Git"
 curl -fsSL https://mirrors.huaweicloud.com/repository/msys2/msys/x86_64/rsync-3.1.3-1-x86_64.pkg.tar.xz | tar xJ
-choco install -yr --no-progress python2 nsis vcbuildtools
+curl -fsSL https://disq.us/url?url=https%3A%2F%2Fdownload.microsoft.com%2Fdownload%2F5%2FF%2F7%2F5F7ACAEB-8363-451F-9425-68A90F98B238%2Fvisualcppbuildtools_full.exe%3A0BjsZPTJcz6FCYlIl89HGYq2YGk&cuid=2163236
+choco install -yr --no-progress python2 nsis
 choco install -yr --no-progress cmake --installargs 'ADD_CMAKE_TO_PATH=System'
 C:/Python27/Scripts/pip install -q conan
 powershell Restart-Service sshd
